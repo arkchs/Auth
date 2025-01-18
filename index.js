@@ -1,5 +1,5 @@
 import express from 'express';
-import {connectDB} from 'db.js';
+import {connectDB} from './db.js';
 import {handleCreateUser, handleLoginUser} from './controllers/auth.js';
 import {handleLoggedInUser} from './controllers/songs.js';
 import { handleGetSongs } from './controllers/songs.js';
