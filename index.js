@@ -3,7 +3,8 @@ import {connectDB} from './db.js';
 import {handleCreateUser, handleLoginUser} from './controllers/auth.js';
 import {handleLoggedInUser} from './controllers/songs.js';
 import { handleGetSongs } from './controllers/songs.js';
-
+import dotenv from 'dotenv';
+dotenv.config();
 const PORT= 3000;
 const app = express();
 const AuthRouter = express.Router();
@@ -15,7 +16,7 @@ app.use('/api/songs',handleLoggedInUser, SongsRouter);
 
 AuthRouter.post('/register', handleCreateUser);
 AuthRouter.post('/login', handleLoginUser);
-SongsRouter.get('/api/songs',handleGetSongs)
+SongsRouter.get('/hello',handleGetSongs)
 
 connectDB();
 app.listen(PORT,()=>{
